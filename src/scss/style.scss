@@ -1,0 +1,118 @@
+/* Main Style Sheet */
+
+* { margin: 0; padding: 0; }
+
+@import "_variables";
+
+.wrapper {
+  max-width: 100vw;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template: minmax(5vh, auto) 1fr minmax(5vh, auto) / 1fr 1fr 1fr;
+  grid-template-areas: "header header header"
+                       "main   main   main  "
+                       "footer footer footer";
+
+  background-color: $color_bg;
+}
+
+.header {
+  padding: 0.25rem;
+
+  background-color: $color_black;
+
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  flex-flow: row wrap;
+
+  grid-area: header;
+
+  .header__title {
+    padding: 0 1.5rem;
+    border-bottom: 2px solid $color_gold;
+    border-radius: 0.15rem;
+
+    color: $font_white;
+    font: 800 2.25rem "Barlow Condensed", sans-serif;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  
+  .header__text {
+    color: $color_gold;
+    font: 400 1rem "Outfit", sans-serif;
+    text-align: center;
+    text-transform: capitalize;
+  } 
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  padding: 0.25rem;
+
+  background-color: $color_dark_black;
+
+  grid-area: footer;
+
+  display: grid;
+  grid-template: repeat(3, auto) / 1fr;
+  gap: 0.5rem;
+
+  .footer-section {
+    padding: 0.5rem;
+    border-top: 1px solid $color_gold;
+    border-bottom: 1px solid $color_gold;
+  }
+
+  .footer__title {
+    margin: 0.25rem 0;
+
+    color: $font_white;
+    font: 500 1.15rem "Barlow Condensed", sans-serif;
+  }
+
+  .list {
+    list-style: none;
+
+    .list__obj {
+      padding-left: 0.25rem;
+      
+      color: $font_white;
+      font: 400 1rem "Outfit", sans-serif;
+
+      &::before {
+        padding-right: 0.25rem;
+
+        content: "\f101";
+        color: $color_gold;
+        font: 500 0.85rem "FontAwesome";
+      }
+    }
+
+    .list__link {
+      color: $font_white;
+      font: 400 1rem "Outfit", sans-serif;
+      text-decoration: none;
+
+      &::before {
+        padding: 0.15rem;
+
+        content: "\f08e";
+        color: inherit;
+        font: 500 0.85rem "FontAwesome";
+      }
+
+      &:hover,
+      &:active,
+      &:target {
+        color: $color_gold;
+        text-decoration: underline solid 1px $color_gold;
+      }
+    }
+  }
+}

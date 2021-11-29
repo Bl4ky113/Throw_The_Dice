@@ -1,0 +1,92 @@
+@charset "UTF-8";
+/* Main Style Sheet */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  max-width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template: minmax(5vh, auto) 1fr minmax(5vh, auto)/1fr 1fr 1fr;
+  grid-template-areas: "header header header" "main   main   main  " "footer footer footer";
+  background-color: #bbb;
+}
+
+.header {
+  padding: 0.25rem;
+  background-color: #252525;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  grid-area: header;
+}
+.header .header__title {
+  padding: 0 1.5rem;
+  border-bottom: 2px solid #ca0;
+  border-radius: 0.15rem;
+  color: #fff;
+  font: 800 2.25rem "Barlow Condensed", sans-serif;
+  text-align: center;
+  text-transform: capitalize;
+}
+.header .header__text {
+  color: #ca0;
+  font: 400 1rem "Outfit", sans-serif;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  padding: 0.25rem;
+  background-color: #000;
+  grid-area: footer;
+  display: grid;
+  grid-template: repeat(3, auto)/1fr;
+  gap: 0.5rem;
+}
+.footer .footer-section {
+  padding: 0.5rem;
+  border-top: 1px solid #ca0;
+  border-bottom: 1px solid #ca0;
+}
+.footer .footer__title {
+  margin: 0.25rem 0;
+  color: #fff;
+  font: 500 1.15rem "Barlow Condensed", sans-serif;
+}
+.footer .list {
+  list-style: none;
+}
+.footer .list .list__obj {
+  padding-left: 0.25rem;
+  color: #fff;
+  font: 400 1rem "Outfit", sans-serif;
+}
+.footer .list .list__obj::before {
+  padding-right: 0.25rem;
+  content: "";
+  color: #ca0;
+  font: 500 0.85rem "FontAwesome";
+}
+.footer .list .list__link {
+  color: #fff;
+  font: 400 1rem "Outfit", sans-serif;
+  text-decoration: none;
+}
+.footer .list .list__link::before {
+  padding: 0.15rem;
+  content: "";
+  color: inherit;
+  font: 500 0.85rem "FontAwesome";
+}
+.footer .list .list__link:hover, .footer .list .list__link:active, .footer .list .list__link:target {
+  color: #ca0;
+  text-decoration: underline solid 1px #ca0;
+}
