@@ -15,7 +15,7 @@
 }
 
 .header {
-  padding: 0.25rem;
+  padding: 0.5rem;
   background-color: #252525;
   display: flex;
   align-items: baseline;
@@ -40,7 +40,215 @@
 }
 
 .main {
+  background-color: #fff;
   grid-area: main;
+}
+.main .section {
+  width: 90%;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  margin: 0.25rem auto;
+  position: relative;
+}
+.main .section--roll {
+  background-color: #252525;
+}
+.main .section--roll .title {
+  padding: 0 0.25rem;
+  padding-left: 0.5rem;
+  color: #fff;
+  font: 900 1.25rem "Outfit", sans-serif;
+}
+.main .section--roll .dice-wrapper {
+  margin: 0.25rem;
+  border: 2px solid #ca0;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+  gap: 0.5rem;
+}
+.main .section--roll .dice-wrapper .dice {
+  width: 30vh;
+  height: 30vh;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  display: grid;
+  grid-template: repeat(3, 1fr)/repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.main .section--roll .dice-wrapper .dice .dice__dot {
+  width: 8vh;
+  height: 8vh;
+  border-radius: 2rem;
+  background-color: #b11;
+}
+.main .section--roll .btn-wrapper {
+  padding: 1vh 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main .section--roll .btn-wrapper .btn {
+  border: 2px solid #ca0;
+  border-radius: 0.5rem;
+  outline: none;
+  padding: 2vh 10vh;
+  background-color: #000;
+  color: #ca0;
+  font: 900 1.25rem "Outfit", sans-serif;
+  text-decoration: none;
+}
+.main .section--roll .btn-wrapper .btn:hover, .main .section--roll .btn-wrapper .btn:target, .main .section--roll .btn-wrapper .btn:focus {
+  border-color: #000;
+  background-color: #ca0;
+  color: #000;
+  text-decoration: underline solid 2px #000;
+}
+.main .section--roll .btn-wrapper .btn:active {
+  border-color: #000;
+  background-color: #b11;
+  color: #000;
+  text-decoration: underline solid 2px #000;
+}
+.main .section--text .title {
+  margin: 0.5rem 0;
+  border-bottom: 2px solid #ca0;
+  color: #ca0;
+  font: 900 1.25rem "Outfit", sans-serif;
+  text-transform: capitalize;
+}
+.main .section--text .subtitle {
+  margin: 0.25rem 0;
+  color: #b11;
+  font: 700 1rem "Outfit", sans-serif;
+  text-decoration: underline solid 2px #b11;
+  text-transform: capitalize;
+}
+.main .section--text .text {
+  color: #000;
+  font: 400 1rem "Outfit", sans-serif;
+}
+.main .section--text .list {
+  border-left: 2px solid #ca0;
+  padding-left: 0.25rem;
+  list-style: none;
+  color: #000;
+  font: 400 1rem "Outfit", sans-serif;
+}
+.main .section--text .list .li::before {
+  padding-right: 0.25rem;
+  content: "";
+  color: #ca0;
+  font: 500 1rem "FontAwesome";
+}
+.main .section--results {
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.main .section--results .results-wrapper {
+  border: 2px solid #ca0;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: #252525;
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  grid-template: auto 1fr/65vw 20vw;
+  grid-template-areas: "title  exit  " "result result";
+}
+.main .section--results .results-wrapper .title {
+  border-bottom: 2px solid #ca0;
+  padding: 0.15rem 0;
+  color: #ca0;
+  font: 700 1.75rem "Barlow Condensed", sans-serif;
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  grid-area: title;
+}
+.main .section--results .results-wrapper .title sub {
+  font-size: 0.6em;
+}
+.main .section--results .results-wrapper .exit-btn {
+  margin: 0.25rem 0.5rem;
+  border: 2px solid #ca0;
+  border-radius: 0.25rem;
+  outline: none;
+  background-color: transparent;
+  grid-area: exit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ca0;
+  font: 500 1.25rem "FontAwesome";
+  text-align: center;
+}
+.main .section--results .results-wrapper .exit-btn::before {
+  content: "";
+}
+.main .section--results .results-wrapper .exit-btn:hover, .main .section--results .results-wrapper .exit-btn:target, .main .section--results .results-wrapper .exit-btn:focus {
+  border-color: #000;
+  background-color: #ca0;
+  color: #000;
+  text-decoration: underline solid 2px #000;
+}
+.main .section--results .results-wrapper .exit-btn:active {
+  border-color: #000;
+  background-color: #b11;
+  color: #000;
+  text-decoration: underline solid 2px #000;
+}
+.main .section--results .results-wrapper .results {
+  padding: 0.25rem;
+  grid-area: result;
+}
+.main .section--results .results-wrapper .results .text {
+  margin: 0.25rem 0;
+  color: #fff;
+  font: 500 1rem "Outfit", sans-serif;
+}
+.main .section--results .results-wrapper .results .text--win {
+  margin: 1rem 0;
+  font-weight: 700;
+  text-decoration: underline solid 2px #ca0;
+}
+.main .section--results .results-wrapper .results .text--lose {
+  margin: 1rem 0;
+  font-weight: 700;
+  text-decoration: underline solid 2px #b11;
+}
+.main .section--results .results-wrapper .results .score {
+  color: #ca0;
+  font: 700 1.15em "Barlow Condensed", sans-serif;
+  text-decoration: underline solid 2px #ca0;
+}
+.main .section--results .results-wrapper .results .list {
+  list-style: none;
+  color: #fff;
+  font: 500 1rem "Outfit", sans-serif;
+}
+.main .section--results .results-wrapper .results .list .li::before {
+  padding-right: 0.25rem;
+  content: "";
+  color: #ca0;
+  font: 500 1rem "FontAwesome";
+}
+.main .section--results .results-wrapper .results .list .li--negative::before {
+  color: #b11;
+}
+.main .section--results .results-wrapper .results .list .li--negative .score {
+  color: #b11;
+  text-decoration-color: #b11;
 }
 
 .footer {
@@ -76,6 +284,7 @@
   font: 500 0.85rem "FontAwesome";
 }
 .footer .list .list__link {
+  outline: none;
   color: #fff;
   font: 400 1rem "Outfit", sans-serif;
   text-decoration: none;
@@ -86,7 +295,7 @@
   color: inherit;
   font: 500 0.85rem "FontAwesome";
 }
-.footer .list .list__link:hover, .footer .list .list__link:active, .footer .list .list__link:target {
+.footer .list .list__link:hover, .footer .list .list__link:active, .footer .list .list__link:target, .footer .list .list__link:focus {
   color: #ca0;
   text-decoration: underline solid 1px #ca0;
 }

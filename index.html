@@ -15,7 +15,7 @@
   <script src="https://kit.fontawesome.com/996d4da3f6.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700&family=Inconsolata:wght@300;400;500&family=Outfit:wght@300;400;500;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700&family=Inconsolata:wght@300;400;500&family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./src/css/style.css">
   <link rel="stylesheet" href="./src/css/tablet.css" media="screen and (min-width: 425px)">
   <link rel="stylesheet" href="./src/css/desktop.css" media="screen and (min-width: 768px)">
@@ -27,13 +27,71 @@
     <p class="header__text">// Made By Bl4ky113</p>
   </header>
   <main class="main">
-    
+    <section class="section section--roll">
+      <p class="title">Let's Roll Those Dice</p>
+      <section class="dice-wrapper">
+        <div class="dice" id="dice_1"></div>
+        <div class="dice" id="dice_2"></div>
+      </section>
+      <section class="btn-wrapper">
+        <button class="btn" id="btn_roll">Roll The Dice</button>
+      </section>
+    </section>
+    <section class="section section--results">
+      <div class="results-wrapper">
+        <p class="title">Congrats!!! <sub>To us</sub></p>
+        <button class="exit-btn"></button>
+        <section class="results">
+          <p class="text text--win">
+            You have won this Game, lets see what happen with the others.
+          </p>
+          <p class="text">
+            You have <span class="score">#</span> extra points. 
+          </p>
+          <ul class="list">
+            <li class="li">Your dice are pair, and fair <span class="score">+1</span></li>
+            <li class="li li--negative">Both of your dice have a low score <span class="score">-2</span></li>
+          </ul>
+        </section>
+      </div>
+    </section>
+    <section class="section section--text">
+      <p class="text">
+        So... You are felling lucky today, right? You better check the rules before 
+        jumping off the cliff.
+      </p>
+      <p class="title">Rules To Play The Game</p>
+      <p class="subtitle">To Win The Game</p>
+      <p class="text">
+        When you give those dice a spin, the result must be greater
+        than 6 in order to win; otherwise you can deposit your kidneys 
+        at the nearest redeem point.
+      </p>
+      <p class="subtitle">Extra Score</p>
+      <p class="text">
+        You can win an extra score, you can redeem it at the store. But 
+        there's only lollipops and free bathroom passes. TP not incluided.
+      </p>
+      <ul class="list">
+        <li class="li">
+          If your dice are a pair, you get the extra score. 
+          But if you still lose with your pair, you can say: "that's unfair".
+        </li>
+        <li class="li">
+          You can get an extra score, if one of your dice is higher than 5. 
+          But if one of them is lower than 2, you lose extra score. Else if none 
+          of your dice enters in these categories, you score is average, boring if you ask me.
+        </li>
+      </ul>
+      <p class="text">
+        Be careful, you can also lose extra score, and that might cost you more.
+      </p>
+    </section>
   </main>
   <footer class="footer">
     <section class="footer-section">
       <p class="footer__title">References</p>
       <ul class="list">
-        
         <li class="list__obj"><a href="https://bl4ky113.github.io/CodigoMisionTIC/JavaScript/LanzamientoDeDados_3raSemana/baseLanzamientoDados.html" class="list__link" target="_blank">Original Excercise</a></li>
       </ul>
     </section>

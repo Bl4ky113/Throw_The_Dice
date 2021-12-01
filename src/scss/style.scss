@@ -18,7 +18,7 @@
 }
 
 .header {
-  padding: 0.25rem;
+  padding: 0.5rem;
 
   background-color: $color_black;
 
@@ -49,7 +49,301 @@
 }
 
 .main {
+  background-color: $font_white;
+
   grid-area: main;
+
+  .section {
+    width: 90%;
+
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    margin: 0.25rem auto;
+
+    position: relative;
+  }
+
+  .section--roll {
+    background-color: $color_black;
+
+    .title {
+      padding: 0 0.25rem;
+      padding-left: 0.5rem;
+
+      color: $font_white;
+      font: 900 1.25rem "Outfit", sans-serif;
+    }
+
+    .dice-wrapper {
+      margin: 0.25rem;
+      border: 2px solid $color_gold;
+      border-radius: 0.25rem;
+      padding: 0.5rem;
+
+      background-color: $color_dark_black;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-flow: row wrap;
+      gap: 0.5rem;
+
+      .dice {
+        width: 30vh; 
+        height: 30vh;
+
+        border-radius: 0.5rem;
+
+        background-color: $font_white;
+
+        display: grid;
+        grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+        align-items: center;
+        justify-items: center;
+        align-content: center;
+        justify-content: center;
+
+        .dice__dot {
+          width: 8vh;
+          height: 8vh;
+  
+          border-radius: 2rem;
+
+          background-color: $color_red;
+        }
+      }
+    }
+
+    .btn-wrapper {
+      padding: 1vh 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .btn {
+        border: 2px solid $color_gold;
+        border-radius: 0.5rem;
+        outline: none;
+        padding: 2vh 10vh;
+
+        background-color: $color_dark_black;
+
+        color: $color_gold;
+        font: 900 1.25rem "Outfit", sans-serif;
+        text-decoration: none;
+
+        &:hover,
+        &:target,
+        &:focus {
+          border-color: $color_dark_black;
+
+          background-color: $color_gold;
+
+          color: $color_dark_black;
+          text-decoration: underline solid 2px $color_dark_black;
+        }
+
+        &:active {
+          border-color: $color_dark_black;
+
+          background-color: $color_red;
+
+          color: $color_dark_black;
+          text-decoration: underline solid 2px $color_dark_black;
+        }
+      }
+    }
+  }
+
+  .section--text {
+    .title {
+      margin: 0.5rem 0;
+      border-bottom: 2px solid $color_gold;
+
+      color: $color_gold;
+      font: 900 1.25rem "Outfit", sans-serif;
+      text-transform: capitalize;
+    }
+    
+    .subtitle {
+      margin: 0.25rem 0;
+      
+      color: $color_red;
+      font: 700 1rem "Outfit", sans-serif;
+      text-decoration: underline solid 2px $color_red;
+      text-transform: capitalize;
+    }
+    
+    .text {
+      color: $font_black;
+      font: 400 1rem "Outfit", sans-serif; 
+    }
+    
+    .list {
+      border-left: 2px solid $color_gold;
+      padding-left: 0.25rem;
+      
+      list-style: none;
+      
+      color: $font_black;
+      font: 400 1rem "Outfit", sans-serif;
+      
+      .li {
+        &::before {
+          padding-right: 0.25rem;
+
+          content: "\f101";
+          color: $color_gold;
+          font: 500 1rem "FontAwesome";
+        }
+      }
+    }
+  }
+
+  .section--results {
+    width: 100%;
+
+    padding: 0;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    
+    .results-wrapper {
+      border: 2px solid $color_gold;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+
+      background-color: $color_black;
+
+      position: absolute;
+      z-index: 2;
+
+      display: grid;
+      grid-template: auto 1fr / 65vw 20vw;
+      grid-template-areas: "title  exit  "
+                           "result result";
+
+      .title {
+        border-bottom: 2px solid $color_gold;
+        padding: 0.15rem 0;
+
+        color: $color_gold;
+        font: 700 1.75rem "Barlow Condensed", sans-serif;
+
+        display: flex;
+        align-items: baseline;
+        gap: 0.25rem;
+
+        grid-area: title;
+
+        sub {
+          font-size: 0.6em;
+        }
+      }
+
+      .exit-btn {
+        margin: 0.25rem 0.5rem;
+        border: 2px solid $color_gold;
+        border-radius: 0.25rem;
+        outline: none;
+
+        background-color: transparent;
+
+        grid-area: exit;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: $color_gold;
+        font: 500 1.25rem "FontAwesome";
+        text-align: center;
+        
+        &::before { content: "\f00d"; }
+
+        &:hover,
+        &:target,
+        &:focus {
+          border-color: $color_dark_black;
+
+          background-color: $color_gold;
+
+          color: $color_dark_black;
+          text-decoration: underline solid 2px $color_dark_black;
+        }
+
+        &:active {
+          border-color: $color_dark_black;
+
+          background-color: $color_red;
+
+          color: $color_dark_black;
+          text-decoration: underline solid 2px $color_dark_black;
+        }
+      }
+
+      .results {
+        padding: 0.25rem;
+
+        grid-area: result;
+
+        .text {
+          margin: 0.25rem 0;
+
+          color: $font_white;
+          font: 500 1rem "Outfit", sans-serif;
+        }
+        
+        .text--win {
+          margin: 1rem 0;
+          
+          font-weight: 700;
+          text-decoration: underline solid 2px $color_gold;
+        }
+        
+        .text--lose {
+          margin: 1rem 0;
+          
+          font-weight: 700;
+          text-decoration: underline solid 2px $color_red;
+        }
+
+        .score {
+          color: $color_gold;
+          font: 700 1.15em "Barlow Condensed", sans-serif;
+          text-decoration: underline solid 2px $color_gold;
+        }
+        
+        .list {
+          list-style: none;
+
+          color: $font_white;
+          font: 500 1rem "Outfit", sans-serif;
+
+          .li {
+            &::before {
+              padding-right: 0.25rem;
+
+              content: "\f101";
+              color: $color_gold;
+              font: 500 1rem "FontAwesome";
+            }
+          }
+
+          .li--negative {
+            &::before { color: $color_red; }
+
+            .score {
+              color: $color_red;
+              text-decoration-color: $color_red;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .footer {
@@ -95,6 +389,8 @@
     }
 
     .list__link {
+      outline: none;
+      
       color: $font_white;
       font: 400 1rem "Outfit", sans-serif;
       text-decoration: none;
@@ -109,7 +405,8 @@
 
       &:hover,
       &:active,
-      &:target {
+      &:target,
+      &:focus {
         color: $color_gold;
         text-decoration: underline solid 1px $color_gold;
       }
