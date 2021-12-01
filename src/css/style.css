@@ -106,13 +106,13 @@
   text-decoration: none;
 }
 .main .section--roll .btn-wrapper .btn:hover, .main .section--roll .btn-wrapper .btn:target, .main .section--roll .btn-wrapper .btn:focus {
-  border-color: #000;
+  border-color: #ca0;
   background-color: #ca0;
   color: #000;
   text-decoration: underline solid 2px #000;
 }
 .main .section--roll .btn-wrapper .btn:active {
-  border-color: #000;
+  border-color: #b11;
   background-color: #b11;
   color: #000;
   text-decoration: underline solid 2px #000;
@@ -162,7 +162,7 @@
   background-color: #252525;
   position: absolute;
   z-index: 2;
-  display: grid;
+  display: none;
   grid-template: auto 1fr/65vw 20vw;
   grid-template-areas: "title  exit  " "result result";
 }
@@ -197,13 +197,13 @@
   content: "";
 }
 .main .section--results .results-wrapper .exit-btn:hover, .main .section--results .results-wrapper .exit-btn:target, .main .section--results .results-wrapper .exit-btn:focus {
-  border-color: #000;
+  border-color: #ca0;
   background-color: #ca0;
   color: #000;
   text-decoration: underline solid 2px #000;
 }
 .main .section--results .results-wrapper .exit-btn:active {
-  border-color: #000;
+  border-color: #b11;
   background-color: #b11;
   color: #000;
   text-decoration: underline solid 2px #000;

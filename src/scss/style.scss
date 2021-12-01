@@ -4,6 +4,28 @@
 
 @import "_variables";
 
+@mixin btnHoverStatus() {
+  &:hover,
+  &:target,
+  &:focus {
+    border-color: $color_gold;
+
+    background-color: $color_gold;
+
+    color: $color_dark_black;
+    text-decoration: underline solid 2px $color_dark_black;
+  }
+
+  &:active {
+    border-color: $color_red;
+
+    background-color: $color_red;
+
+    color: $color_dark_black;
+    text-decoration: underline solid 2px $color_dark_black;
+  }
+}
+
 .wrapper {
   max-width: 100vw;
   min-height: 100vh;
@@ -133,25 +155,7 @@
         font: 900 1.25rem "Outfit", sans-serif;
         text-decoration: none;
 
-        &:hover,
-        &:target,
-        &:focus {
-          border-color: $color_dark_black;
-
-          background-color: $color_gold;
-
-          color: $color_dark_black;
-          text-decoration: underline solid 2px $color_dark_black;
-        }
-
-        &:active {
-          border-color: $color_dark_black;
-
-          background-color: $color_red;
-
-          color: $color_dark_black;
-          text-decoration: underline solid 2px $color_dark_black;
-        }
+        @include btnHoverStatus();
       }
     }
   }
@@ -220,7 +224,7 @@
       position: absolute;
       z-index: 2;
 
-      display: grid;
+      display: none; // grid
       grid-template: auto 1fr / 65vw 20vw;
       grid-template-areas: "title  exit  "
                            "result result";
@@ -263,25 +267,7 @@
         
         &::before { content: "\f00d"; }
 
-        &:hover,
-        &:target,
-        &:focus {
-          border-color: $color_dark_black;
-
-          background-color: $color_gold;
-
-          color: $color_dark_black;
-          text-decoration: underline solid 2px $color_dark_black;
-        }
-
-        &:active {
-          border-color: $color_dark_black;
-
-          background-color: $color_red;
-
-          color: $color_dark_black;
-          text-decoration: underline solid 2px $color_dark_black;
-        }
+        @include btnHoverStatus();
       }
 
       .results {
