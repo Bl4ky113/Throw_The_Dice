@@ -1,7 +1,5 @@
 /* min-width: 470px */
 
-@import "_variables";
-
 .wrapper {
   grid-template-columns: 5vw 1fr 5vw;
   grid-template-areas: "header header header"
