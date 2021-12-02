@@ -98,3 +98,9 @@ rollDiceBtn.onclick = () => {
     resultsOutput.style = "display: none;";
   };
 };
+
+window.onload = () => {
+  diceObj.HTML_OBJ.forEach((dice, i) => {
+    showNumberOnDice(dice, diceObj.values[i]);
+  });
+};

@@ -225,7 +225,7 @@
       z-index: 2;
 
       display: none; // grid
-      grid-template: auto 1fr / 65vw 20vw;
+      grid-template: auto 1fr / 1fr 20%;
       grid-template-areas: "title  exit  "
                            "result result";
 

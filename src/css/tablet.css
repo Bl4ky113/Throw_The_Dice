@@ -1,1 +1,5 @@
-/* min-width: 768px */
+/* min-width: 470px */
+.wrapper {
+  grid-template-columns: 5vw 1fr 5vw;
+  grid-template-areas: "header header header" "blank1 main   blank2" "footer footer footer";
+}

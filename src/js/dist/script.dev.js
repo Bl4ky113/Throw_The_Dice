@@ -100,3 +100,9 @@ rollDiceBtn.onclick = function () {
     resultsOutput.style = "display: none;";
   };
 };
+
+window.onload = function () {
+  diceObj.HTML_OBJ.forEach(function (dice, i) {
+    showNumberOnDice(dice, diceObj.values[i]);
+  });
+};
