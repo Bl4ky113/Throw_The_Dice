@@ -75,6 +75,8 @@ var calcExtraScore = function calcExtraScore() {
 };
 
 rollDiceBtn.onclick = function () {
+  resultsOutput.style = "";
+  rollDiceBtn.disabled = true;
   var results_HTML = "".concat(initialResults_HTML, "<section class=\"results\">");
   diceObj.values = [Math.floor(Math.random() * 6) + 1, Math.floor(Math.random() * 6) + 1];
 
@@ -90,14 +92,28 @@ rollDiceBtn.onclick = function () {
   results_HTML += "<p class=\"text\">You have <span class=\"score\">".concat(diceObj.extraScore[0], "</span> extra points.</p>");
   results_HTML += "<ul class=\"list\">".concat(diceObj.extraScore[1], "</ul></section>");
   diceObj.HTML_OBJ.forEach(function (dice, i) {
-    showNumberOnDice(dice, diceObj.values[i]);
+    var numberOfAnimations = 0;
+
+    dice.onanimationend = function () {
+      numberOfAnimations += 1;
+
+      if (numberOfAnimations === 1) {
+        showNumberOnDice(dice, diceObj.values[i]);
+        dice.style.animation = "1500ms rotateDice 1500ms backwards reverse ease-in";
+      } else if (numberOfAnimations >= 2) {
+        dice.style = "";
+      }
+    };
+
+    dice.style.animation = "1000ms rotateDice 500ms backwards normal ease-out";
   });
   resultsOutput.innerHTML = results_HTML;
-  resultsOutput.style = "display: grid;";
+  resultsOutput.style = "display: grid; animation: 500ms ease 3s both normal showResults;";
   var closeResultsBtn = document.getElementById("close_results_btn");
 
   closeResultsBtn.onclick = function () {
-    resultsOutput.style = "display: none;";
+    resultsOutput.style = "";
+    rollDiceBtn.disabled = false;
   };
 };
 

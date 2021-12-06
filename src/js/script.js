@@ -21,7 +21,6 @@ const diceDotsGridPositions = {
 }; 
 const initialResults_HTML = `<p class="title">Congrats!!! <sub>To Us</sub></p><button class="exit-btn" id="close_results_btn"></button>`;
 
-
 const showNumberOnDice = (dice, value=1) => {
   const positions = diceDotsGridPositions[value];
   let HTML_dots = "";
@@ -66,6 +65,9 @@ const calcExtraScore = (value=[], winStatus=false) => {
 };
 
 rollDiceBtn.onclick = () => {
+  resultsOutput.style = ""
+  rollDiceBtn.disabled = true;
+
   let results_HTML = `${initialResults_HTML}<section class="results">`;
 
   diceObj.values = [
@@ -87,15 +89,29 @@ rollDiceBtn.onclick = () => {
   results_HTML += `<ul class="list">${diceObj.extraScore[1]}</ul></section>`;
   
   diceObj.HTML_OBJ.forEach((dice, i) => {
-    showNumberOnDice(dice, diceObj.values[i]);
+    let numberOfAnimations = 0;
+    
+    dice.onanimationend = () => {
+      numberOfAnimations += 1;
+      
+      if (numberOfAnimations === 1) {
+        showNumberOnDice(dice, diceObj.values[i]);
+        dice.style.animation = "1500ms rotateDice 1500ms backwards reverse ease-in";
+      } else if (numberOfAnimations >= 2) {
+        dice.style = "";
+      }
+    };
+
+    dice.style.animation = "1000ms rotateDice 500ms backwards normal ease-out";
   });
 
   resultsOutput.innerHTML = results_HTML;
-  resultsOutput.style = "display: grid;";
+  resultsOutput.style = "display: grid; animation: 500ms ease 3s both normal showResults;";
 
   let closeResultsBtn = document.getElementById("close_results_btn");
   closeResultsBtn.onclick = () => {
-    resultsOutput.style = "display: none;";
+    resultsOutput.style = "";
+    rollDiceBtn.disabled = false;
   };
 };
 

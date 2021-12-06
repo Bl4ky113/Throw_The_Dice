@@ -97,6 +97,7 @@
   justify-content: space-evenly;
   flex-flow: row wrap;
   gap: 0.5rem;
+  overflow: hidden;
 }
 .main .section--roll .dice-wrapper .dice {
   width: 30vh;
@@ -131,6 +132,7 @@
   color: var(--color_gold);
   font: 900 1.25rem "Outfit", sans-serif;
   text-decoration: none;
+  transition: background-color ease 500ms, color ease 500ms, text-decoration ease 500ms;
 }
 .main .section--roll .btn-wrapper .btn:hover, .main .section--roll .btn-wrapper .btn:target, .main .section--roll .btn-wrapper .btn:focus {
   border-color: var(--color_gold);
@@ -143,6 +145,11 @@
   background-color: var(--color_red);
   color: var(--color_dark_black);
   text-decoration: underline solid 2px var(--color_dark_black);
+}
+.main .section--roll .btn-wrapper .btn[disabled] {
+  border-color: var(--color_red);
+  background-color: var(--color_red);
+  color: var(--color_dark_black);
 }
 .main .section--text .title {
   margin: 0.5rem 0;
@@ -194,6 +201,7 @@
   display: none;
   grid-template: auto 1fr/1fr 20%;
   grid-template-areas: "title  exit  " "result result";
+  transition: transform 500ms ease;
 }
 .main .section--results .results-wrapper .title {
   border-bottom: 2px solid var(--color_gold);
@@ -222,6 +230,7 @@
   color: var(--color_gold);
   font: 500 1.25rem "FontAwesome";
   text-align: center;
+  transition: background-color ease 250ms, color ease 250ms, text-decoration ease 250ms;
 }
 .main .section--results .results-wrapper .exit-btn::before {
   content: "";
@@ -318,6 +327,7 @@
   color: var(--font_white);
   font: 400 1rem "Outfit", sans-serif;
   text-decoration: none;
+  transition: color ease 500ms, text-decoration ease 500ms;
 }
 .footer .list .list__link::before {
   padding: 0.15rem;
@@ -328,4 +338,23 @@
 .footer .list .list__link:hover, .footer .list .list__link:active, .footer .list .list__link:target, .footer .list .list__link:focus {
   color: var(--color_gold);
   text-decoration: underline solid 1px var(--color_gold);
+}
+
+@keyframes showResults {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes rotateDice {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(0);
+  }
 }
